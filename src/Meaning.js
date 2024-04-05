@@ -11,9 +11,7 @@ export default function Meaning(props) {
         definition: {props.meaning.definition}
         <br />
         example: {props.meaning.example}
-        <br />
         <Synonyms synonyms={props.meaning.synonyms} />
-        <br />
         <Antonyms antonyms={props.meaning.antonyms} />
         <br />
         <br />

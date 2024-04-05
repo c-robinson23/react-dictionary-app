@@ -5,7 +5,7 @@ export default function Phonetic(props) {
   if (props.phonetic)
     return (
       <ul className="Phonetic">
-        phonetic(s): <li>{props.phonetic}</li>
+        <li>/{props.phonetic}/</li>
       </ul>
     );
   else {

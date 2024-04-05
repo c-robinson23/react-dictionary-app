@@ -3,8 +3,8 @@ import axios from "axios";
 import Results from "./Results.js";
 import "./Dictionary.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState(" ");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
 
   function handleKeywordChange(event) {
@@ -27,13 +27,26 @@ export default function Dictionary() {
     setResults(response.data);
   }
 
-  return (
-    <div className="Dictionary">
-      <form onSubmit={search}>
-        <input type="search" autoFocus={true} onChange={handleKeywordChange} />
-      </form>
-
-      <Results results={results} />
-    </div>
-  );
+  if (results) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <form onSubmit={search}>
+            <input
+              type="search"
+              autoFocus={true}
+              onChange={handleKeywordChange}
+            />
+          </form>
+          <div className="hint">
+            suggested words: sunset, books, yoga, forest
+          </div>
+        </section>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    search({ preventDefault: function () {} });
+    return "Loading...";
+  }
 }
