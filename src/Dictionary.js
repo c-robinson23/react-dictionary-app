@@ -23,7 +23,7 @@ export default function Dictionary(props) {
   }
 
   function handleResponse(response) {
-    //console.log(response.data);
+    console.log(response.data);
     setResults(response.data);
   }
 
@@ -31,11 +31,13 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <section>
+          <h1>What word do you want to look up?</h1>
           <form onSubmit={search}>
             <input
               type="search"
               autoFocus={true}
               onChange={handleKeywordChange}
+              defaultValue={props.defaultKeyword}
             />
           </form>
           <div className="hint">
