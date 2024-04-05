@@ -1,16 +1,21 @@
 import React from "react";
 import Meaning from "./Meaning";
+import Phonetic from "./Phonetic";
 
 export default function Results(props) {
-  //console.log(props.results[0].definition);
+  //console.log(props);
 
   if (props.results) {
     return (
       <div className="Results">
-        {props.results.map(function (results, index) {
+        <h2>{props.results.word}</h2>
+
+        <Phonetic phonetic={props.results.phonetic} />
+
+        {props.results.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
-              <Meaning define={results} />
+              <Meaning meaning={meaning} />
             </div>
           );
         })}

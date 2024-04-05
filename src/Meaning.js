@@ -3,17 +3,18 @@ import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
 
 export default function Meaning(props) {
-  //console.log(props);
+  console.log(props);
   return (
     <div className="Meaning">
-      <h5>({props.define.partOfSpeech})</h5>
+      <h3>({props.meaning.partOfSpeech})</h3>
       <div>
-        definition: {props.define.definition}
+        definition: {props.meaning.definition}
         <br />
+        example: {props.meaning.example}
         <br />
-        <Synonyms synonyms={props.define.synonyms} />
+        <Synonyms synonyms={props.meaning.synonyms} />
         <br />
-        <Antonyms antonyms={props.define.antonyms} />
+        <Antonyms antonyms={props.meaning.antonyms} />
         <br />
         <br />
       </div>

@@ -23,8 +23,8 @@ export default function Dictionary() {
   }
 
   function handleResponse(response) {
-    //console.log(response.data.meanings[0].definition);
-    setResults(response.data.meanings);
+    //console.log(response.data);
+    setResults(response.data);
   }
 
   return (
@@ -32,7 +32,7 @@ export default function Dictionary() {
       <form onSubmit={search}>
         <input type="search" autoFocus={true} onChange={handleKeywordChange} />
       </form>
-      <h2>{keyword}</h2>
+
       <Results results={results} />
     </div>
   );
