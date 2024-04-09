@@ -14,7 +14,16 @@ export default function App() {
           <Dictionary defaultKeyword="hello" />
         </main>
         <footer className="App-footer">
-          <small>Coded by Candace Robinson</small>
+          <small>
+            Coded by Candace Robinson, open-sourced on{" "}
+            <a
+              href="https://github.com/c-robinson23/react-dictionary-app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>{" "}
+          </small>
         </footer>
       </div>
     </div>
